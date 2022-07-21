@@ -9,7 +9,7 @@ const obj = {
 
 const printFullName = (name, lName) => {
   //   const { name, lName } = { ...obj };
-  console.log({ name, lName });
+  console.log({ lName });
 };
 printFullName("Reef", "Goldberg");
 // console.log({ ...obj });
@@ -22,12 +22,22 @@ const title = document.querySelector("#title");
 btn.addEventListener("click", () => (title.innerText = "You clicked"));
 
 //////------ Task 3 ------\\\\\\
+const submit = document.querySelector("#submit");
+const input = document.querySelector("#input");
+const arrList = document.querySelector("#list");
 
 let animalArr = ["Dog", "Cat", "dolphin", "Tiger"];
-console.log("Original array: ", animalArr);
+arrList.innerHTML = `${[...animalArr]}`;
 
-animalArr = [...animalArr, "Armadillo", "AXOLOTL"];
-console.log("After adding values: ", animalArr);
+submit.addEventListener("click", () => {
+  animalArr = [...animalArr, input.value];
+  arrList.innerHTML = `${animalArr}`;
+});
+
+// console.log("Original array: ", animalArr);
+
+// animalArr = [...animalArr, "Armadillo", "AXOLOTL"];
+// console.log("After adding values: ", animalArr);
 
 //////------ Task 4 ------\\\\\\
 
